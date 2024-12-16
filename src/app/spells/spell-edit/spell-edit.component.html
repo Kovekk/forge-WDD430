@@ -1,0 +1,174 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <form id="spell-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5 form-group">
+          <label for="name">Spell name:</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            size="120"
+            max="120"
+            name="name"
+            [ngModel]="spell?.name"
+            required
+            #name="ngModel">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1 form-group">
+          <label for="level">Level:</label>
+          <input
+            type="number"
+            id="level"
+            class="form-control"
+            size="120"
+            max="9"
+            name="level"
+            [ngModel]="spell?.level"
+            required
+            #level="ngModel">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="school">School of magic:</label>
+          <input
+            type="text"
+            id="school"
+            class="form-control"
+            size="150"
+            max="255"
+            name="school"
+            [ngModel]="spell?.school"
+            required
+            #school="ngModel">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="range">Range:</label>
+          <input
+            type="text"
+            id="range"
+            class="form-control"
+            size="120"
+            max="255"
+            name="range"
+            [ngModel]="spell?.range"
+            required
+            #range="ngModel">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="damage">Damage:</label>
+          <input
+            type="text"
+            id="damage"
+            class="form-control"
+            size="120"
+            max="255"
+            name="damage"
+            [ngModel]="spell?.damage">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="components">Components:</label>
+          <input
+            type="text"
+            id="components"
+            class="form-control"
+            size="150"
+            max="255"
+            name="components"
+            [ngModel]="spell?.components">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2 form-group">
+          <label for="duration">Duration:</label>
+          <input
+            type="text"
+            id="duration"
+            class="form-control"
+            size="120"
+            max="255"
+            name="duration"
+            [ngModel]="spell?.duration"
+            required
+            #duration="ngModel">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="castingTime">Casting time:</label>
+          <input
+            type="text"
+            id="castingTime"
+            class="form-control"
+            size="120"
+            max="255"
+            name="castingTime"
+            [ngModel]="spell?.castingTime"
+            required
+            #castingTime="ngModel">
+        </div>
+        <div class="col-sm-1 form-group">
+          <label for="ritual">Ritual?</label>
+          <input
+            type="checkbox"
+            id="ritual"
+            class="form-control checkbox"
+            size="120"
+            max="255"
+            name="ritual"
+            [ngModel]="spell?.ritual">
+        </div>
+        <div class="col-sm-1 form-group">
+          <label for="concentration">Concentration?</label>
+          <input
+            type="checkbox"
+            id="concentration"
+            class="form-control checkbox"
+            size="120"
+            max="255"
+            name="concentration"
+            [ngModel]="spell?.concentration">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 form-group"><label for="description">Description:</label>
+          <textarea
+            id="description"
+            class="form-control description"
+            name="description"
+            [ngModel]="spell?.description"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="alert alert-danger" 
+          *ngIf="!f.valid">The Spell name, level, range, duration, casting time, and school of magic are required fields.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success" type="submit" 
+          [disabled]="!f.valid">Save</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

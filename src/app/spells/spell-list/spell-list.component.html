@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a class="btn btn-primary" [routerLink]="['new']">Create New Spell</a>
+    </div>
+  </div>
+  <div *ngFor="let spell of spells; let i = index">
+    <div class="row list-row" >
+      <a class="a-change" data-toggle="collapse" attr.data-target="#{{spell._id}}">
+        <div class="col-md-1 card-item">{{ spell.level }}</div>
+        <div class="col-md-5 card-item">{{ spell.name }}</div>
+        <div class="col-md-3 card-item">{{ spell.castingTime }}</div>
+        <div class="col-md-3 card-item">{{ spell.components }}</div>
+      </a>
+    </div>
+      <div id="{{spell._id}}" class="row collapse detail-row">
+        <div class="col-md-12">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="detail-item-desc">Level</div>
+                <div class="detail-item">{{ spell.level }}</div>
+              </div>
+              <div class="col-md-4">
+                <div class="detail-item-desc">Ritual</div>
+                <div class="detail-item">{{ spell.ritual }}</div>
+              </div>
+              <div class="col-md-4">
+                <div class="detail-item-desc">Concentration</div>
+                <div class="detail-item">{{ spell.concentration }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="detail-item-desc">Range</div>
+                <div class="detail-item">{{ spell.range }}</div>
+              </div>
+              <div class="col-md-4">
+                <div class="detail-item-desc">School</div>
+                <div class="detail-item">{{ spell.school }}</div>
+              </div>
+              <div class="col-md-4">
+                <div class="detail-item-desc">Damage</div>
+                <div class="detail-item">{{ spell.damage }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="detail-item-desc">Duration</div>
+                <div class="detail-item">{{ spell.duration }}</div>
+              </div>
+              <div class="col-md-4">
+                <div class="detail-item-desc">Casting Time</div>
+                <div class="detail-item">{{ spell.castingTime }}</div>
+              </div>
+              <div class="col-md-4">
+                <div class="detail-item-desc">Components</div>
+                <div class="detail-item">{{ spell.components }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 detail-item-desc">Description</div>
+              <div class="col-md-12">{{ spell.description }}</div>
+            </div>
+            <div class="spacer"></div>
+            <div class="row">
+              <div class="col-md-12">
+                <a class="btn btn-primary" [routerLink]="['edit', spell._id]">Edit Spell</a>
+                <a class="btn btn-danger" (click)="onDelete(i)">Delete Spell</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+

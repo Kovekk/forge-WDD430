@@ -1,0 +1,11 @@
+p {
+  margin-bottom: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.panel-body:hover {
+  cursor: pointer;
+}

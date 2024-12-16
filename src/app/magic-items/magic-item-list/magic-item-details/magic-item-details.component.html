@@ -1,0 +1,34 @@
+<h4><strong>{{ selectedMagicItem.name }}</strong></h4>
+<div class="container-fluid panel panel-default">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="detail-item-desc">Rarity</div>
+      <div>{{ selectedMagicItem.rarity }}</div>
+    </div>
+    <div class="col-md-6">
+      <div class="detail-item-desc">Category</div>
+      <div>{{ selectedMagicItem.category }}</div>
+    </div>
+    <div class="col-md-6">
+      <div class="detail-item-desc">Type</div>
+      <div class="detail-item">{{ selectedMagicItem.type }}</div>
+    </div>
+    <div class="col-md-6">
+      <div class="detail-item-desc">Attunement</div>
+      <div class="detail-item">{{ selectedMagicItem.attunement }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="detail-item-desc">Description</div>
+      <div>{{ selectedMagicItem.description }}</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="col-md-12">
+      <a class="btn btn-primary" [routerLink]="['edit']">Edit Item</a>
+      <a class="btn btn-danger" (click)="onDelete()">Delete Item</a>
+    </div>
+  </div>
+</div>

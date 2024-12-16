@@ -1,0 +1,6 @@
+<div class="col-md-7 border-end">
+  <a class="btn btn-primary" [routerLink]="['new']">New Magic Item</a>
+  <div class="row">
+    <forge-magic-item-card *ngFor="let item of magicItems" [magicItem]="item"></forge-magic-item-card>
+  </div>
+</div>

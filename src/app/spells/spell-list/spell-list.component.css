@@ -1,0 +1,39 @@
+.card-item {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.detail-item {
+  margin: 0 auto 0.4em auto;
+  width: fit-content;
+}
+
+.detail-item-desc {
+  margin: 0.5em auto 0 auto;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.list-row {
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 1em;
+}
+
+.list-row:hover {
+  cursor: pointer;
+  background-color: rgb(237, 237, 237);
+}
+
+.spacer {
+  margin: 1em;
+}
+
+.btn {
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+}
+
+.a-change {
+  color: black;
+}
